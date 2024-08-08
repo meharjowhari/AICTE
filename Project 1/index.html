@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Login Form with Night Sky Scene</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000033; /* Night blue */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .moon {
+            fill: #FFD700; /* Yellow */
+            animation: moon-move 30s linear infinite;
+        }
+
+        @keyframes moon-move {
+            0% { transform: translate(20px, 20px); }
+            50% { transform: translate(0, 0); }
+            100% { transform: translate(20px, 20px); }
+        }
+
+        .star {
+            fill: #fff;
+            font-size: 24px;
+            animation: star-twinkle 1s infinite alternate;
+        }
+
+        .star:nth-child(2) {
+            animation-delay: -0.5s;
+        }
+
+        .star:nth-child(3) {
+            animation-delay: -1s;
+        }
+
+        @keyframes star-twinkle {
+            0% { opacity: 1; }
+            100% { opacity: 0.3; }
+        }
+
+        .cloud {
+            fill: #ffffff; /* White */
+            opacity: 0.8;
+            animation: cloud-move 10s linear infinite;
+        }
+
+        .cloud:nth-child(2) {
+            animation-delay: -5s;
+        }
+
+        @keyframes cloud-move {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .foreground {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30%;
+            z-index: 0;
+        }
+
+        .grass {
+            fill: #006400; /* Dark Green */
+        }
+
+        .tree {
+            fill: #228B22; /* Forest Green */
+        }
+
+        .child {
+            animation: play 10s infinite alternate;
+        }
+
+        @keyframes play {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(50px); }
+        }
+
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 350px;
+            max-width: 90%;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out forwards;
+            z-index: 1;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-bottom: 2px solid #ddd;
+            background-color: transparent;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .input-group label {
+            position: absolute;
+            top: 10px;
+            left: 0;
+            color: #999;
+            transition: all 0.3s;
+            pointer-events: none;
+        }
+
+        .input-group input:focus,
+        .input-group input:valid {
+            border-color: #4a90e2;
+        }
+
+        .input-group input:focus + label,
+        .input-group input:valid + label {
+            top: -20px;
+            font-size: 12px;
+            color: #4a90e2;
+        }
+
+        .btn {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+
+        .btn:hover {
+            background-color: #357abd;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .links {
+            margin-top: 20px;
+        }
+
+        .links a {
+            color: #4a90e2;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .links a:hover {
+            color: #357abd;
+        }
+
+        @media (max-width: 480px) {
+            .login-container {
+                width: 100%;
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+            <circle class="moon" cx="200" cy="100" r="50"/>
+            <text class="star" x="300" y="50">✧</text>
+            <text class="star" x="500" y="80">✧</text>
+            <text class="star" x="700" y="20">✧</text>
+            <text class="star" x="900" y="60">✧</text>
+            <text class="star" x="1100" y="30">✧</text>
+            <text class="star" x="1300" y="70">✧</text>
+            <g class="cloud">
+                <ellipse cx="300" cy="200" rx="60" ry="20" />
+                <ellipse cx="340" cy="200" rx="40" ry="15" />
+                <ellipse cx="280" cy="190" rx="30" ry="10" />
+            </g>
+            <g class="cloud">
+                <ellipse cx="800" cy="150" rx="60" ry="20" />
+                <ellipse cx="840" cy="150" rx="40" ry="15" />
+                <ellipse cx="780" cy="140" rx="30" ry="10" />
+            </g>
+        </svg>
+    </div>
+    <div class="foreground">
+        <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+            <rect class="grass" x="0" y="280" width="1440" height="40" />
+            <path class="tree" d="M100,280 L120,280 L110,220 Z" />
+            <path class="tree" d="M300,280 L330,280 L315,200 Z" />
+            <path class="tree" d="M500,280 L530,280 L515,210 Z" />
+            <path class="tree" d="M700,280 L730,280 L715,190 Z" />
+            <path class="tree" d="M900,280 L930,280 L915,220 Z" />
+            <path class="tree" d="M1100,280 L1130,280 L1115,200 Z" />
+            <path class="tree" d="M1300,280 L1330,280 L1315,210 Z" />
+            <!-- Simple stick figure children -->
+            <g class="child" fill="#000">
+                <circle cx="200" cy="270" r="10" />
+                <line x1="200" y1="280" x2="200" y2="300" stroke="#000" stroke-width="2" />
+                <line x1="200" y1="290" x2="190" y2="310" stroke="#000" stroke-width="2" />
+                <line x1="200" y1="290" x2="210" y2="310" stroke="#000" stroke-width="2" />
+                <line x1="190" y1="285" x2="210" y2="285" stroke="#000" stroke-width="2" />
+            </g>
+            <g class="child" fill="#000" transform="translate(400, 0)">
+                <circle cx="200" cy="270" r="10" />
+                <line x1="200" y1="280" x2="200" y2="300" stroke="#000" stroke-width="2" />
+                <line x1="200" y1="290" x2="190" y2="310" stroke="#000" stroke-width="2" />
+                <line x1="200" y1="290" x2="210" y2="310" stroke="#000" stroke-width="2" />
+                <line x1="190" y1="285" x2="210" y2="285" stroke="#000" stroke-width="2" />
+            </g>
+        </svg>
+    </div>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form>
+            <div class="input-group">
+                <input type="text" id="username" required>
+                <label for="username">Username</label>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" required>
+                <label for="password">Password</label>
+            </div>
+            <button type="submit" class="btn">Login</button>
+        </form>
+        <div class="links">
+            <a href="#">Forgot Password?</a>
+            <a href="#">Sign Up</a>
+        </div>
+    </div>
+</body>
+</html>
