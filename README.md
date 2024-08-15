@@ -1,2 +1,2 @@
 Hello there!
-All the files related to AICTE are available in thsi repository, Thank you for checking them out!
+All the files related to AICTE are available in this repository, Thank you for checking them out!
