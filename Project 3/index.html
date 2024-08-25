@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Product Page</title>
+    <style>
+        /* CSS styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #f0f0f0;
+        }
+
+        /* Product Section */
+        .product {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .product-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .product-image img:hover {
+            transform: scale(1.05);
+        }
+
+        .product-details {
+            flex: 1;
+            padding: 0 2rem;
+            min-width: 300px;
+        }
+
+        .product-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-description {
+            margin-bottom: 1rem;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .add-to-cart {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-to-cart:hover {
+            background-color: #45a049;
+        }
+
+        /* Reviews Section */
+        .reviews {
+            margin-top: 2rem;
+        }
+
+        .review {
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Related Products Section */
+        .related-products {
+            margin-top: 2rem;
+        }
+
+        .related-products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .related-product {
+            border: 1px solid #ddd;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .related-product img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .product {
+                flex-direction: column;
+            }
+
+            .product-details {
+                padding: 1rem 0;
+            }
+
+            .related-products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .related-products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="product">
+            <div class="product-image">
+                <img src="car-image.jpg" alt="Product Image">
+            </div>
+            <div class="product-details">
+                <h1 class="product-title">Tesla Model S</h1>
+                <p class="product-description">The Tesla Model S is an all-electric luxury sedan with a sleek design, exceptional performance, and cutting-edge technology. It features autopilot capabilities, a spacious interior, and a long-range battery that offers up to 396 miles on a single charge.</p>
+                <p class="product-price">INR 1,50,00,000</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="reviews">
+            <h2>Customer Reviews</h2>
+            <div class="review">
+                <h3>Incredible Performance</h3>
+                <p>The Tesla Model S delivers an unparalleled driving experience with its instant acceleration and smooth ride. Truly a masterpiece in automotive engineering.</p>
+            </div>
+            <div class="review">
+                <h3>Luxury and Technology Combined</h3>
+                <p>From the premium interior to the advanced autopilot features, this car is a perfect blend of luxury and technology. Worth every penny!</p>
+            </div>
+        </div>
+
+        <div class="related-products">
+            <h2>Related Products</h2>
+            <div class="related-products-grid">
+                <div class="related-product">
+                    <img src="car1.jpg" alt="Related Product 1">
+                    <h3>Tesla Model 3</h3>
+                    <p>INR 70,00,000</p>
+                </div>
+                <div class="related-product">
+                    <img src="car2.jpg" alt="Related Product 2">
+                    <h3>Mercedes-Benz E-Class</h3>
+                    <p>INR 82,00,000</p>
+                </div>
+                <div class="related-product">
+                    <img src="car3.jpg" alt="Related Product 3">
+                    <h3>Audi A6</h3>
+                    <p>INR 60,00,000</p>
+                </div>
+                <div class="related-product">
+                    <img src="car4.jpg" alt="Related Product 4">
+                    <h3>BMW 5 Series</h3>
+                    <p>INR 65,00,000</p>
+                </div>
+                <div class="related-product">
+                    <img src="car5.jpg" alt="Related Product 5">
+                    <h3>Jaguar XF</h3>
+                    <p>INR 55,00,000</p>
+                </div>
+                <div class="related-product">
+                    <img src="car6.jpg" alt="Related Product 6">
+                    <h3>Lexus ES</h3>
+                    <p>INR 61,00,000</p>
+                </div>
+                <div class="related-product">
+                    <img src="car7.jpg" alt="Related Product 7">
+                    <h3>Volvo S90</h3>
+                    <p>INR 57,00,000</p>
+                </div>
+                <div class="related-product">
+                    <img src="car8.jpg" alt="Related Product 8">
+                    <h3>Porsche Taycan</h3>
+                    <p>INR 2,00,00,000</p>
+                </div>
+                <div class="related-product">
+                    <img src="car9.jpg" alt="Related Product 9">
+                    <h3>Aston Martin Vantage</h3>
+                    <p>INR 3,00,00,000</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
